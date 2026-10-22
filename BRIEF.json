@@ -1,0 +1,37 @@
+{
+  "repo": "ber-boundary-tree",
+  "user": "ASN.1 protocol developers locating a malformed definite-length BER boundary.",
+  "pain": "A nested length can escape its parent even when the overall byte stream looks plausible in a hex dump.",
+  "capability": "Emit exact BER parent/header/value boundaries and byte-offset errors without decoding application values.",
+  "alternatives": [
+    "wbond/asn1crypto",
+    "evsinev/ber-tlv",
+    "pyasn1/pyasn1"
+  ],
+  "query": "BER TLV sort:stars-desc",
+  "distinct": "Existing byte dumps and image/chunk tools do not parse ASN.1 tag/length nesting. This preserves structural offsets and ASN.1 tag classes.",
+  "limits": "ASCII hex file<=1MiB decodes to<=128KiB. Definite lengths only,<=4 subsequent high-tag octets and4 long-length octets,depth<=32,<=5000 nodes. Multiple top-level siblings and empty input allowed. Reject truncation,parent overflow,indefinite length,EOC and nonminimal high tags. Nonminimal definite length forms remain accepted and explicitly flagged (BER permits them). Primitive bytes opaque,preview<=32 bytes. No ASN.1 schema/type/value checks, DER/CER validator, EMV-specific nonminimal tags such as9F02, padding, decryption,certificate verification or encoder.",
+  "expected": "The invented nested sequence reports four nodes with exact parent boundaries and preserves the octet-string value.",
+  "checks": "Nested/class/high-tag and nonminimal length cases, every truncation prefix, malformed parent boundaries, EOC/indefinite rejection and size/depth/node caps.",
+  "primary": [
+    "https://www.itu.int/rec/dologin_pub.asp?id=T-REC-X.690-202102-I%21%21PDF-E&lang=e&type=items"
+  ],
+  "topics": [
+    "asn1",
+    "ber",
+    "tlv",
+    "python"
+  ],
+  "occurrence": "GH-20261022",
+  "state": "VALIDATED",
+  "demand": "Inferred workflow need; no verified request for this new product.",
+  "inventory_compared": 213,
+  "acceptance": [
+    "The invented nested sequence reports four nodes with exact parent boundaries and preserves the octet-string value.",
+    "Nested/class/high-tag and nonminimal length cases, every truncation prefix, malformed parent boundaries, EOC/indefinite rejection and size/depth/node caps.",
+    "Clean wheel-installed console outside checkout; meaningful malformed input and source preservation."
+  ],
+  "discovery": "Searchable problem-focused README/topics and runnable invented fixture, no outreach or adoption promise.",
+  "originality": "Original AI-assisted implementation; standard algorithms independently reimplemented, no third-party code/prose copied.",
+  "mutual_distinction": "Numeric constraints, concurrent register semantics, WAV cue references, ASN.1 byte boundaries and raster-mask topology are separate users, inputs and contracts."
+}

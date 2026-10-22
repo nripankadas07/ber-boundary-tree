@@ -1,0 +1,71 @@
+{
+  "bytes": 11,
+  "nodes": [
+    {
+      "index": 0,
+      "parent": null,
+      "depth": 0,
+      "offset": 0,
+      "tag_hex": "30",
+      "class": "universal",
+      "tag_number": 16,
+      "constructed": true,
+      "header_length": 2,
+      "value_offset": 2,
+      "length": 9,
+      "end": 11,
+      "minimal_length": true,
+      "preview_hex": null
+    },
+    {
+      "index": 1,
+      "parent": 0,
+      "depth": 1,
+      "offset": 2,
+      "tag_hex": "02",
+      "class": "universal",
+      "tag_number": 2,
+      "constructed": false,
+      "header_length": 2,
+      "value_offset": 4,
+      "length": 1,
+      "end": 5,
+      "minimal_length": true,
+      "preview_hex": "05"
+    },
+    {
+      "index": 2,
+      "parent": 0,
+      "depth": 1,
+      "offset": 5,
+      "tag_hex": "a1",
+      "class": "context",
+      "tag_number": 1,
+      "constructed": true,
+      "header_length": 2,
+      "value_offset": 7,
+      "length": 4,
+      "end": 11,
+      "minimal_length": true,
+      "preview_hex": null
+    },
+    {
+      "index": 3,
+      "parent": 2,
+      "depth": 2,
+      "offset": 7,
+      "tag_hex": "04",
+      "class": "universal",
+      "tag_number": 4,
+      "constructed": false,
+      "header_length": 2,
+      "value_offset": 9,
+      "length": 2,
+      "end": 11,
+      "minimal_length": true,
+      "preview_hex": "abcd"
+    }
+  ],
+  "all_lengths_minimal": true,
+  "limitation": "Structural definite BER only; no schema, ASN.1 value semantics, DER validation, EMV tag deviations, decryption or certificate verification."
+}

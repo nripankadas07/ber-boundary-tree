@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "ber-boundary-tree"
+version = "0.1.0"
+description = "Emit exact BER parent/header/value boundaries and byte-offset errors without decoding application values."
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+readme = "README.md"
+dependencies = []
+[project.scripts]
+ber-boundary-tree = "ber_boundary_tree:main"
+[tool.setuptools]
+py-modules = ["ber_boundary_tree"]
