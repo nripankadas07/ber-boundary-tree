@@ -1,0 +1,138 @@
+{
+  "query": {
+    "query": "BER TLV sort:stars-desc",
+    "observed": "2026-10-22T06:18:36.315Z",
+    "url": "https://github.com/search?q=BER%20TLV%20sort%3Astars-desc&type=repositories",
+    "results": [
+      "evsinev/ber-tlv",
+      "kspearrin/BerTlv.NET",
+      "evsinev/BerTlv",
+      "Shopify/grizzly_ber",
+      "AliceOh/Constructed-BER-TLV-Encoder-and-Decoder",
+      "philipschoemig/BER-TLV",
+      "skythen/bertlv",
+      "toumilov/python-ber-tlv",
+      "HosseinAssaran/Ber-TLV",
+      "lexxvir/tlv-parser"
+    ],
+    "error": null
+  },
+  "comparables": [
+    {
+      "repo": "wbond/asn1crypto",
+      "url": "https://github.com/wbond/asn1crypto",
+      "stars": 363,
+      "pushed_at": "2026-07-18T16:57:21Z",
+      "archived": false,
+      "default_branch": "master",
+      "license_metadata": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "observed": "2026-10-22T06:27:07.550Z",
+      "workflow": "Pure Python BER/DER parsing and serialization with schemas for common cryptographic structures.",
+      "sampled_open_items": [
+        {
+          "number": 312,
+          "title": "Add AES-GMAC algorithm parameters for CMS",
+          "url": "https://github.com/wbond/asn1crypto/pull/312",
+          "body_excerpt": "Adds the three AES-GMAC OIDs and their nonce/tag-length parameters from RFC 9044 to the MAC algorithm representation used by CMS `AuthenticatedData` and `CMSAlgorithmProtection`.\n\nFixes #281. The existing `HmacAlgorithm` name is retained for compatibility (it already includes `des_mac`). Parameter decoding uses the existing OID dispatch mechanism. This is separate from the AES-GCM encryption work "
+        },
+        {
+          "number": 311,
+          "title": "Preserve instance encoding methods when copying ASN.1 values",
+          "url": "https://github.com/wbond/asn1crypto/pull/311",
+          "body_excerpt": "Copying an ASN.1 value with an instance-specific `method` currently restores the class default instead. For example, copying a manually constructed empty sequence leaves its method as `None`, so serializing the copy raises `TypeError`.\n\nPreserve the method in the shared `Asn1Value._copy()` path, which also covers `retag()` and `untag()`. When copying indefinite-length BER strings, explicitly selec"
+        },
+        {
+          "number": 310,
+          "title": "fix(core): guard against unbounded recursion in .native on deeply nested data",
+          "url": "https://github.com/wbond/asn1crypto/pull/310",
+          "body_excerpt": "## Description\n\nCloses #300.\n\nCalling `.native` on BER/DER data containing thousands of nested `Sequence`/`Set`/`SequenceOf` values caused unbounded recursion: each nesting level triggered a recursive `_parse_children(recurse=True)` call with no depth limit, so attacker-controlled input depth led to a `RecursionError` (reported via #299, CVSS 7.5 availability DoS). Verified: depth 2000 \u2192 `Recursio"
+        }
+      ]
+    },
+    {
+      "repo": "evsinev/ber-tlv",
+      "url": "https://github.com/evsinev/ber-tlv",
+      "stars": 140,
+      "pushed_at": "2021-12-11T02:25:14Z",
+      "archived": false,
+      "default_branch": "master",
+      "license_metadata": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "observed": "2026-10-22T06:19:51.602Z",
+      "workflow": "Java/Maven TLV parser and builder, including payment-oriented value types; tag semantics differ from strict ASN.1.",
+      "sampled_open_items": [
+        {
+          "number": 26,
+          "title": "BerTlvBuilder - addHex looses data if size not even",
+          "url": "https://github.com/evsinev/ber-tlv/issues/26",
+          "body_excerpt": "BerTlvBuilder.addHex - when adding Stiring of odd length, will just process the even number of characters. \r\nIn my view either it should throw an exception/runtime exception or process all characters correctly.\r\n\r\nThe data is then skipped in HexUtil.parseHex  where the size of destination buffer is integer division that doesn't work for numbers that are not power of 2."
+        },
+        {
+          "number": 25,
+          "title": "In BerTlvBuilder \"aLength\" is never used",
+          "url": "https://github.com/evsinev/ber-tlv/issues/25",
+          "body_excerpt": "is it intentional?\r\n\r\n```java\r\n    public BerTlvBuilder(BerTag aTemplate, byte[] aBuffer, int aOffset, int aLength) {\r\n        theTemplate  = aTemplate;\r\n        theBuffer = aBuffer;\r\n        thePos = aOffset;\r\n        theBufferOffset = aOffset;\r\n    }\r\n```"
+        },
+        {
+          "number": 24,
+          "title": "Name the \"magic numbers\"",
+          "url": "https://github.com/evsinev/ber-tlv/issues/24",
+          "body_excerpt": "BerTlvBuilder contains a lot of \"magic numbers\" (`0x80`, `0x81`, `0x100` and so on). What are they? Could you make them constant?\r\n\r\n```java\r\n    private void fillLength(byte[] aBuffer, int aOffset, int aLength) {\r\n\r\n        if(aLength < 0x80) {\r\n            aBuffer[aOffset] = (byte) aLength;\r\n\r\n        } else if (aLength <0x100) {\r\n            aBuffer[aOffset] = (byte) 0x81;\r\n            aBuffer["
+        }
+      ]
+    },
+    {
+      "repo": "pyasn1/pyasn1",
+      "url": "https://github.com/pyasn1/pyasn1",
+      "stars": 53,
+      "pushed_at": "2026-08-10T20:31:34Z",
+      "archived": false,
+      "default_branch": "main",
+      "license_metadata": {
+        "key": "bsd-2-clause",
+        "name": "BSD 2-Clause \"Simplified\" License",
+        "spdx_id": "BSD-2-Clause",
+        "url": "https://api.github.com/licenses/bsd-2-clause",
+        "node_id": "MDc6TGljZW5zZTQ="
+      },
+      "observed": "2026-10-22T06:27:07.966Z",
+      "workflow": "Python ASN.1 types and BER/CER/DER codecs, pip package and protocol/schema workflows.",
+      "sampled_open_items": [
+        {
+          "number": 131,
+          "title": "refactor(codecs.ber.encode): add basic return type annotations",
+          "url": "https://github.com/pyasn1/pyasn1/pull/131",
+          "body_excerpt": "`python-ldap` recently added type annotations. To support `mypy` it added a lot of type-ignore comments. They are incompatible with the `ty`-type-checker.\n\nExample:\n```python\n    def encodeControlValue(self) -> bytes:\n        return encoder.encode(self._derefSpecs())  # type: ignore\n```\n\nI want to get rid of these type-ignore comments.\nI can explicitly use a `return cast(bytes, encoder.encode(self"
+        },
+        {
+          "number": 130,
+          "title": "BitString: fix __le__/__ge__ for equal-length values",
+          "url": "https://github.com/pyasn1/pyasn1/pull/130",
+          "body_excerpt": "### What happens\n\n`BitString` orders by length first, then by value. `__lt__` and `__gt__` do that; `__le__` and `__ge__` test `len(a) <= len(b) or ...`, which is already true when the lengths are equal, so the value is never compared:\n\n```python\nfrom pyasn1.type.univ import BitString\na, b = BitString(binValue='11'), BitString(binValue='10')\na <= b, a > b       # (True, True): a value both greater"
+        },
+        {
+          "number": 129,
+          "title": "Fix schemaless decoding of non-universal tags",
+          "url": "https://github.com/pyasn1/pyasn1/pull/129",
+          "body_excerpt": "Schemaless BER/CER/DER decoding treated a constructed non-universal tag as one EXPLICIT value. The LDAP SearchRequest in #17 then failed with `PyAsn1Error: Read 18 bytes instead of expected 81`, because the base-DN octet string does not fill the APPLICATION 3 content. The same substrate also has primitive context tags (IMPLICIT tagging removed the base type) and an empty attribute SEQUENCE, which "
+        }
+      ]
+    }
+  ],
+  "highest_star_relevant_found": "wbond/asn1crypto",
+  "primary_sources": [
+    "https://www.itu.int/rec/dologin_pub.asp?id=T-REC-X.690-202102-I%21%21PDF-E&lang=e&type=items"
+  ],
+  "scope": "Scoped live stars-desc GitHub keyword search, supplemented with established relevant alternatives after README/docs/source inspection; not an exhaustive global ranking. No competitor installs, timing, reliability or support response were measured. Sampled open items can include PRs; none is treated as demand for this new tool."
+}
